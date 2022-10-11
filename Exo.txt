@@ -1,0 +1,22 @@
+créez une page de votre choix puis affichez là sur le navigateur (n'utilisez aucun fichier déjà présent)
+
+---
+
+1) créez l'entité Auteur avec les propriétés suivantes:
+nom: string 50
+prénom: string 50
+dateDeNaissance: date
+biographie: text
+
+2) créez un formulaire d'ajout pour Auteur puis ajoutez-y quelques uns
+
+affichez sous forme de tableau les auteurs sans la biographie mais en ajoutant une colonne d'action (voir, editer, supprimer)
+
+3) faites en sorte de pouvoir modifier les informations d'un auteur
+
+4) créez une page pour l'affichage d'un auteur
+
+5) faites en sorte de pouvoir modifier les informations d'un auteur
+
+6) faites en sorte de pouvoir supprimer un auteur
+

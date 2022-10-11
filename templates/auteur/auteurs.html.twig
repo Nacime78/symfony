@@ -1,0 +1,57 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Tous les auteurs
+{% endblock %}
+
+{% block content %}
+<table class="mt-5 table table-striped border" style="border-collapse: separate; border-radius: 20px">
+	<thead>
+		<tr>
+			<th scope="col">Nom</th>
+			<th scope="col">Prénom</th>
+			<th scope="col">Date de naissance</th>
+			<th scope="col">Biographie</th>
+            <th scope="col">Action</th>
+		</tr>
+	</thead>
+	<tbody>
+    {% for auteurs in auteurs %}
+		<tr>
+			<td>{{auteurs.nom}}</td>
+            <td>{{auteurs.prenom}}</td>
+            <td>{{auteurs.dateDeNaissance|date('d/m/Y')}}</td>
+            <td>{{auteurs.biographie|slice(0, 20)}}...</td>
+        
+            <td>
+                <a class="btn btn-success" href="{{ path('app_auteur', { id : auteurs.id }) }}">Voir</a>
+                <a class="btn btn-warning" href=" {{ path('app_auteur_editer', { id : auteurs.id } ) }}">Editer</a>
+                <a class="btn btn-danger attention" href="{{ path('app_auteur_delete', { id : auteurs.id }) }}">Supprimer</a>
+            </td>
+		</tr>
+    {% endfor %}
+	</tbody>
+</table>
+
+<script>
+
+window.alert=function(msg){
+    addEventListener('click', (event) => {
+        $btn = document.querySelector('a');
+        if($btn){
+            alert("attention vous êtes sur le point de supprimer un auteur")
+        }
+    });
+}
+
+window.alert = function(message) {
+    if(message == 'Adblock detected, please consider disabling it') {
+        console.log(message);
+    } else {
+        confirm(message);
+    }
+}
+
+</script>
+
+{% endblock %}
+
